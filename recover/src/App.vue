@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
+    <!-- <img alt="Vue logo" src="./assets/logo.png">
     <router-link to="/hello">HelloWorld</router-link>
-    <router-link to="/food">food</router-link>
+    <router-link to="/food">food</router-link> -->
       <!-- 路由匹配到的组件将渲染在这里 -->
   <router-view></router-view>
   </div>
@@ -17,6 +17,9 @@ export default {
   // components: {
   //   HelloWorld
   // }
+  mounted(){
+    console.log(this.$route.params);
+  }
 }
 </script>
 
@@ -27,6 +30,9 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+
+
+  
+  
 }
 </style>
