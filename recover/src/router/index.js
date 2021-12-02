@@ -1,27 +1,23 @@
-import Vue from "vue";
-import Router from "vue-router"
-import hellword from '../components/HelloWorld'
-import foo from '../components/food'
-import login from '../views/login'
-Vue.use(Router)
-const router = new Router({
+import VueRouter from 'vue-router'
+import home from '../pages/home.vue'
+import About from '../pages/about.vue'
+import Login from '../pages/login.vue'
+import Vue  from 'vue'
+Vue.use(VueRouter)
+const router = new VueRouter({
     routes:[
         {
-            path:'/',
-            name:'login',
-            component:login
+           path:'/',
+           component:home
         },
         {
-            path:'/hello',
-            name:'hello',
-            component:hellword
-        },
-        {
-            path:'/food',
-            name:'food',
-            component:foo
-        }
+            path:'/about',
+            component:About
+         },
+         {
+            path:'/login',
+            component:Login
+         }
     ]
 })
-
-export default router;
+export default router   

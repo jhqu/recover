@@ -1,46 +1,47 @@
-//resolve 拼接路径方法
-
 const {resolve} = require('path');
-const VueloadPlugin = require('vue-loader/lib/plugin');
-const htmlPlugin = require('html-webpack-plugin')
-console.log(resolve(__dirname));
-module.exports = {
+const {VueLoaderPlugin}=require('vue-loader');
+module.exports ={
     entry:'./src/main.js',
     output:{
-        filename:'mains.js',
-        path:resolve(__dirname,'built')
+        filename:'built.js',
+        path:resolve(__dirname,'dist')
     },
     module:{
         rules:[
             {
-                test: /\.css$/,
-                use:['vue-style-loader','style-loader','css-loader']
+             test:/\.css$/,
+             use:['style-loader','css-loader']
             },
             {
-                test: /\.vue$/,
-                use:['style-loader','css-loader','vue-loader']
-               
+                test:/.vue$/,
+                use:['vue-loader']
             },
             {
-                test: /\.js$/,
-                exclude:/(node_modules|bower_components)/,
+             test:/\.m?js$/,
+             use:{
+                 loader:'babel-loader',
+                 options:{
+                     presets:['@babel/preset-env']
+                 }
+             }
+            },
+            //老的写法
+            {
+                test:/.(png|jpe?g|gif|svg|webp)$/,
                 use:{
-                    loader:'babel-loader',
+                    loader:'file-loader',
                     options:{
-                        //presets:['es2015']
+                        esModule:false
                     }
                 }
-               
             },
+            {
+                test:/.(png|jpe?g|gif|svg|webp)$/,
+                type:'asset/resouce'
+            }
         ]
     },
     plugins:[
-            new VueloadPlugin(),
-            new htmlPlugin({
-                template:'./public/index.html',
-                filename:'index.html'
-            })
-    ],
-    
-    mode:'development'
+     new VueLoaderPlugin()
+    ]
 }
