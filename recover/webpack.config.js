@@ -1,11 +1,15 @@
 const {resolve} = require('path');
 const {VueLoaderPlugin}=require('vue-loader');
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 module.exports ={
     entry:'./src/main.js',
     output:{
         filename:'built.js',
         path:resolve(__dirname,'dist')
     },
+    devtool:'source-map',
+    //devtool:'cheap-module-eval-source-map', //用于开发环境
+    //devtool:'hidden-source-map', //用于生产环境
     module:{
         rules:[
             {
@@ -42,6 +46,9 @@ module.exports ={
         ]
     },
     plugins:[
-     new VueLoaderPlugin()
+     new VueLoaderPlugin(),
+     new HtmlWebpackPlugin({
+         template:'./index.html'
+     })
     ]
 }

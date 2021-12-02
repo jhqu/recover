@@ -10,4 +10,4 @@ new Vue({
     ElementUI,
     router,
     render:h=>h(App),
-})
+}) 
