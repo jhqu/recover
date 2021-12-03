@@ -4,8 +4,7 @@
   :index="item.id.toString()"
   v-for="item of menulist"  
   :key="item.id">评价页面管理</el-menu-item>
-  
-</el-menu>
+  </el-menu>
 
 
 
