@@ -1,10 +1,7 @@
 <template>
-  <div>
-    <ul>
-     
-      <li v-for="item of sumArr" :class="'fontclor'" :key="item.id">{{item.name}}{{item.id}}</li>
-    </ul>
-    <el-button type="primary" round @click="setBackPlack">更改篮球运动员</el-button>
+  <div class="content">
+    <div class="top">dsfsf</div>
+    <div class="down">dfs</div>
   </div>
 </template>
 
@@ -34,7 +31,26 @@ export default {
 </script>
 
 <style  scoped>
- .fontclor{
+ .content{
+   display: flex;
+   flex-direction: column;
+    width: 100%;
+    margin: 0px;
+    
+ }
+ .top{
+    background-color: rgba(255, 255, 255, 1);
+   height: 80px;
+   width: 100%;
    color: red;
+ }
+ .down{
+    background-color: rgba(255, 255, 255, 1);
+   margin-top: 15px;
+   min-height: 750px;
+   width: 80%;
+   align-self: center;
+   border: 1px solid #eaeaea;
+   box-shadow: 0 0 12px #cac6c6;
  }
 </style>>

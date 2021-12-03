@@ -11,7 +11,15 @@ export default {
 }
 </script>
 
-<style>
+<style  scoped>
+div{
+     
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+}
+</style>>
 
 </style>
 
