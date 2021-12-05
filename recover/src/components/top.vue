@@ -108,6 +108,9 @@ export default {
 .left div {
   margin: 0 0 0 15px;
 }
+.centre /deep/.el-menu.el-menu--horizontal {
+border-bottom: none;
+}
 .logo_png {
   background: url(../assets/imgs/logo.png) no-repeat;
   background-size: 100% 100%;

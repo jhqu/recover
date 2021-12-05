@@ -1,5 +1,6 @@
 <template>
-    <div class="table">
+    <div >
+        <div class="table" >
         <el-table border id="iTable" v-loading.iTable="options.loading" :data="list" :stripe="options.stripe"
                   ref="mutipleTable"
                   :header-cell-style="{background: 'rgba(242, 242, 242, 1)',borderColor:'rgba(215, 215, 215, 1)'}"
@@ -51,22 +52,45 @@
             </el-table-column>
             <!--endregion-->
         </el-table>
-        <div v-if="pageShow">
+        </div>
+        <div v-if="pageShow" class="pagenat">
+
+   
+  <!-- <div class="block">
+   
+    <el-button size="small">上一页</el-button>
+    <el-pagination
+      @size-change="handleSizeChange"
+      @current-change="handleCurrentChange"
+      :current-page.sync="currentPage1"
+      :page-size="100"
+      layout="total, prev, pager, next"
+      :total="1">
+    </el-pagination>
+      <el-button size="small">上一页</el-button>
+
+  </div> -->
+
+
             <el-pagination
                     @size-change="handleSizeChange"
                     @current-change="handleCurrentChange"
                     :current-page="1"
                     :page-sizes="[10, 20, 30, 40]"
                     :page-size="10"
-                    layout="total, sizes, prev, pager, next"
+                     layout="total, prev, pager, next"
                     :total="total"
                     background>
             </el-pagination>
+
+
+
         </div>
     </div>
 </template>
 <!--endregion-->
 <script>
+document.getElementsByClassName('btn-prev').innerHTML="dd"
   export default {
     data(){
       return{
@@ -157,20 +181,23 @@
   }
 </script>
 <style  scoped>
-.cell-class-name{
-    border-bottom: 1px solid red !important;
+.block{
+    display: flex;
+    flex-direction: row;
+    
 }
+.table{
+    min-height: 540px;
+}
+.pagenat{
+  text-align: center;
+}
+
+
 .el-table {
     border-color: rgba(215, 215, 215, 1);
-    border-bottom-color: rgba(215, 215, 215, 1);
+    
 }
- thead th{
-    background-color: transparent;
-}
- thead th tr{
-    background-color: transparent;
-}
-.el-table td.el-table__cell, .el-table th.el-table__cell{
-    border-bottom: 1px solid red !important;
-}
+
+
 </style>
