@@ -7,7 +7,7 @@ module.exports ={
         filename:'built.js',
         path:resolve(__dirname,'dist')
     },
-    devtool:'source-map',
+   // devtool:'source-map',
     //devtool:'cheap-module-eval-source-map', //用于开发环境
     //devtool:'hidden-source-map', //用于生产环境
     module:{
@@ -30,18 +30,18 @@ module.exports ={
              }
             },
             //老的写法
+            // {
+            //     test:/.(png|jpe?g|gif|svg|webp)$/,
+            //     use:{
+            //         loader:'file-loader',
+            //         options:{
+            //             esModule:false
+            //         }
+            //     } 
+            // },
             {
                 test:/.(png|jpe?g|gif|svg|webp)$/,
-                use:{
-                    loader:'file-loader',
-                    options:{
-                        esModule:false
-                    }
-                }
-            },
-            {
-                test:/.(png|jpe?g|gif|svg|webp)$/,
-                type:'asset/resouce'
+                type:'asset/resource'
             }
         ]
     },

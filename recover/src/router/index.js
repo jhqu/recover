@@ -4,6 +4,7 @@ import About from '../pages/about.vue'
 import Login from '../pages/login.vue'
 import Top from '../components/top.vue'
 import Vue  from 'vue'
+import tabList from '../components/tablist.vue'
 Vue.use(VueRouter)
 const router = new VueRouter({
     routes:[
@@ -22,6 +23,10 @@ const router = new VueRouter({
          {
             path:'/top',
             component:Top
+         },
+         {
+            path:'/tablist',
+            component:tabList
          }
     ]
 })
