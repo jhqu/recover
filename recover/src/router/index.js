@@ -5,6 +5,7 @@ import Login from '../pages/login.vue'
 import Top from '../components/top.vue'
 import Vue  from 'vue'
 import tabList from '../components/tablist.vue'
+import editParity from '../pages/editParity.vue'
 Vue.use(VueRouter)
 const router = new VueRouter({
     routes:[
@@ -27,7 +28,11 @@ const router = new VueRouter({
          {
             path:'/tablist',
             component:tabList
-         }
+         },
+         {
+            path:'/editparity/:id',
+            component:editParity
+         },
     ]
 })
 export default router   

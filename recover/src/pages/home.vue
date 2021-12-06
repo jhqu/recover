@@ -23,7 +23,7 @@
   </div>
 </template>
 
-<script>
+<script> 
 import Tablist from "../components/tablist.vue";
 
 export default {
@@ -37,8 +37,8 @@ export default {
       page: {
         //关于页码的相关参数
         pageShow: true, //是否显示
-        total: 10, //总条数
-        pageSize: 2, //每页条数
+        total: 100, //总条数
+        pageSize: 5, //每页条数
         pageNo: 1, //第几页
       },
       handleSelection: [], //checkbox选中行
@@ -217,8 +217,10 @@ export default {
       console.log(" row:", row);
     },
     handledel(index, row) {
-      //操作栏删除按钮
+      //操作栏编辑评价项
       console.log(" index:", index);
+      this.$router.push({path:`/editparity/${row.id}`}) //获取路由参数用params
+      //this.$router.push({path:'/login',query:{id:row.id}})
       console.log(" row:", row);
     },
 
