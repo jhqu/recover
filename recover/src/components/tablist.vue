@@ -3,7 +3,7 @@
         <div class="table" >
         <el-table border id="iTable" v-loading.iTable="options.loading" :data="list" :stripe="options.stripe"
                   ref="mutipleTable"
-                  :header-cell-style="{background: 'rgba(242, 242, 242, 1)',borderColor:'rgba(215, 215, 215, 1)'}"
+                  :header-cell-style="{background: 'rgba(242, 242, 242, 1)',borderColor:'rgba(215, 215, 215, 1)',color:'red'}"
                   :cell-style="{borderColor:'rgba(215, 215, 215, 1)'}"
                   cell-class-name="cell-class-name"
                   @selection-change="handleSelectionChange">
@@ -76,9 +76,9 @@
                     @size-change="handleSizeChange"
                     @current-change="handleCurrentChange"
                     :current-page="1"
-                    :page-sizes="[10, 20, 30, 40]"
-                    :page-size="10"
-                     layout="total, prev, pager, next"
+                    :page-sizes="[1, 2, 3, 4]"
+                    :page-size="size"
+                     layout="total, prev, pager, next, sizes"
                     :total="total"
                     background>
             </el-pagination>
@@ -115,6 +115,10 @@ document.getElementsByClassName('btn-prev').innerHTML="dd"
         },
       }, // table 表格的控制参数
       total: {                // 所有条数
+        type: Number,
+        default: ()=>0
+      },
+       size: {                // 动态配置每页的条数
         type: Number,
         default: ()=>0
       },
@@ -198,6 +202,9 @@ document.getElementsByClassName('btn-prev').innerHTML="dd"
     border-color: rgba(215, 215, 215, 1);
     
 }
+.el-table--border{
+    border-bottom: 1px solid #EBEEF5;
 
+}
 
 </style>

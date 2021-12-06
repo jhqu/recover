@@ -2,24 +2,24 @@
   <div class="down">
     <div>
       <h3>评审页面管理</h3>
-      </div>
+    </div>
     <div class="newcr_btn">
-       <el-button type="primary">新建评价页面</el-button>
+      <el-button type="primary">新建评价页面</el-button>
     </div>
     <div class="table_list">
-<tablist
-      :list="list"
-  
-  
-      :options="options"
-      :columns="columns"
-      :operates="operates"
-      :pageShow="page.pageShow"
-      :total="page.total"
-      >dd</tablist
-    >
+      <tablist
+        :list="list"
+        @sizeChange="getSizeChange"
+        @currentPage="getCurrentPage"
+        :size="page.pageSize"
+        :options="options"
+        :columns="columns"
+        :operates="operates"
+        :pageShow="page.pageShow"
+        :total="page.total"
+       
+      ></tablist>
     </div>
-    
   </div>
 </template>
 
@@ -37,74 +37,74 @@ export default {
       page: {
         //关于页码的相关参数
         pageShow: true, //是否显示
-        total: 0, //总条数
-        pageSize: 10, //每页条数
+        total: 10, //总条数
+        pageSize: 2, //每页条数
         pageNo: 1, //第几页
       },
       handleSelection: [], //checkbox选中行
       list: [
         {
-          id:'1',
-          name:'系统安全计划',
-          sort:'1',
-          date:'刘扬  2021-10-10',
-          update:'刘扬  2021-10-10'
+          id: "1",
+          name: "系统安全计划",
+          sort: "1",
+          date: "刘扬  2021-10-10",
+          update: "刘扬  2021-10-10",
         },
         {
-          id:'2',
-          name:'系统安全计划',
-          sort:'1',
-          date:'刘扬  2021-10-10',
-          update:'刘扬  2021-10-10'
+          id: "2",
+          name: "系统安全计划",
+          sort: "1",
+          date: "刘扬  2021-10-10",
+          update: "刘扬  2021-10-10",
         },
         {
-          id:'3',
-          name:'系统安全计划',
-          sort:'1',
-          date:'刘扬  2021-10-10',
-          update:'刘扬  2021-10-10'
-        },
-         {
-          id:'4',
-          name:'系统安全计划',
-          sort:'1',
-          date:'刘扬  2021-10-10',
-          update:'刘扬  2021-10-10'
+          id: "3",
+          name: "系统安全计划",
+          sort: "1",
+          date: "刘扬  2021-10-10",
+          update: "刘扬  2021-10-10",
         },
         {
-          id:'5',
-          name:'系统安全计划',
-          sort:'1',
-          date:'刘扬  2021-10-10',
-          update:'刘扬  2021-10-10'
+          id: "4",
+          name: "系统安全计划",
+          sort: "1",
+          date: "刘扬  2021-10-10",
+          update: "刘扬  2021-10-10",
         },
         {
-          id:'6',
-          name:'系统安全计划',
-          sort:'1',
-          date:'刘扬  2021-10-10',
-          update:'刘扬  2021-10-10'
+          id: "5",
+          name: "系统安全计划",
+          sort: "1",
+          date: "刘扬  2021-10-10",
+          update: "刘扬  2021-10-10",
         },
         {
-          id:'7',
-          name:'系统安全计划',
-          sort:'1',
-          date:'刘扬  2021-10-10',
-          update:'刘扬  2021-10-10'
+          id: "6",
+          name: "系统安全计划",
+          sort: "1",
+          date: "刘扬  2021-10-10",
+          update: "刘扬  2021-10-10",
         },
         {
-          id:'8',
-          name:'系统安全计划',
-          sort:'1',
-          date:'刘扬  2021-10-10',
-          update:'刘扬  2021-10-10'
+          id: "7",
+          name: "系统安全计划",
+          sort: "1",
+          date: "刘扬  2021-10-10",
+          update: "刘扬  2021-10-10",
         },
         {
-          id:'10',
-          name:'系统安全计划',
-          sort:'1',
-          date:'刘扬  2021-10-10',
-          update:'刘扬  2021-10-10'
+          id: "8",
+          name: "系统安全计划",
+          sort: "1",
+          date: "刘扬  2021-10-10",
+          update: "刘扬  2021-10-10",
+        },
+        {
+          id: "10",
+          name: "系统安全计划",
+          sort: "1",
+          date: "刘扬  2021-10-10",
+          update: "刘扬  2021-10-10",
         },
       ], // table数据
       options: {
@@ -132,20 +132,20 @@ export default {
           align: "center",
           isShow: true,
         },
-        
-         {
+
+        {
           prop: "sort",
           label: "从左至右排序",
           align: "center",
           isShow: true,
         },
-         {
+        {
           prop: "date",
           label: "创建人和日期",
           align: "center",
           isShow: true,
         },
-         {
+        {
           prop: "update",
           label: "最后更新人和日期",
           align: "center",
@@ -192,6 +192,36 @@ export default {
     }; //return ending
   },
   methods: {
+    handleSelectionChange(val) {
+      //checkbox选中的数据val 是选中行的所有数组
+      alert(val)
+      this.handleSelection = val;
+    },
+ 
+    getSizeChange(val) {
+     
+      //table组件发射的方法 用于改变每页数据量
+     
+      this.page.pageSize = val;
+      //这下面需要重新调用 获取列表页的函数
+    },
+    getCurrentPage(val) {
+      //table组件发射的方法  用于改变当前所在页码
+      
+      this.page.pageNo = val;
+      //这下面需要重新调用 获取列表页的函数
+    },
+    handleEdit(index, row) {
+      //操作栏编辑按钮
+      console.log(" index:", index);
+      console.log(" row:", row);
+    },
+    handledel(index, row) {
+      //操作栏删除按钮
+      console.log(" index:", index);
+      console.log(" row:", row);
+    },
+
     setBackPlack() {
       this.sumArr.pop(); //末尾删除
       // this.sumArr.shift() //开头删除
@@ -226,10 +256,10 @@ export default {
   box-shadow: 0 0 12px #cac6c6;
   padding: 10px 20px;
 }
-.newcr_btn{
-  align-self:flex-end;
+.newcr_btn {
+  align-self: flex-end;
 }
-.table_list{
+.table_list {
   margin-top: 10px;
 }
 </style>>
