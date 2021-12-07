@@ -1,7 +1,7 @@
 <template>
 
-  <div class="content">
-    <div class="top">
+  <div class="content" >
+    <div class="top" v-if="$route.path!='/login'">
       <Top :menulist="menulist"></Top>
     </div>
     
@@ -12,6 +12,8 @@
 
 <script>
 import Top from './components/top.vue'
+
+
 export default {
    name:'home',
    components:{
@@ -34,8 +36,16 @@ export default {
              {name:'易建联',sex:'男',id:3}
            ],
              activeClass: 'active',
-            errorClass: 'color:red'
+            errorClass: 'color:red',
+            isShow:false,
+            styleObjct:{
+              
+            }
           }
+        
+   },
+   mounted(){
+     console.log(this.$route.path);
    },
    methods:{
      setBackPlack(){
@@ -44,12 +54,13 @@ export default {
       // this.sumArr.push({name:'詹姆斯',sex:'男',id:4}) //向下添加
      // this.sumArr.unshift({name:'詹姆斯',sex:'男',id:4}) //向上添加
      }
-   }
+   },
+   
 }
 </script>
 
 <style  scoped>
-
+ 
  .content{
    display: flex;
   flex-direction: column;
@@ -62,12 +73,14 @@ export default {
     background-color: rgba(255, 255, 255, 1);
    height: 80px;
    width: 100%;
+ 
    
  }
  .down{
     background-color: rgba(255, 255, 255, 1);
    margin-top: 15px;
    min-height: 750px;
+ 
    width: 80%;
    align-self: center;
    border: 1px solid #eaeaea;
