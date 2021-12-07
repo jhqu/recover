@@ -176,6 +176,7 @@ document.getElementsByClassName('btn-prev').innerHTML="dd"
         this.$emit('sizeChange', val)
       },
       handleCurrentChange(val) {  //当前多少页
+      debugger
         this.$emit('currentPage', val)
       },
       clearSelection(){   //清除表格chekbox
