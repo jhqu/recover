@@ -93,10 +93,12 @@ export default {
 </script>
 <style  scoped>
 .contenttop {
+  
   background-color: rgba(255, 255, 255, 1);
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+ 
 }
 .left {
   display: flex;

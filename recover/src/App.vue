@@ -5,6 +5,7 @@
       <Top :menulist="menulist"></Top>
     </div>
     
+    
 <router-view></router-view>
   </div>
 
@@ -60,20 +61,33 @@ export default {
 </script>
 
 <style  scoped>
- 
+ .ada{
+   height: 80px;
+   background-color: gold;
+ }
  .content{
    display: flex;
   flex-direction: column;
     width: 100%;
     margin: 0px;
+    height: 820px;
+    overflow:auto;
+    overflow-y: auto;
+    
     
  }
  .top{
  
-    background-color: rgba(255, 255, 255, 1);
+  background-color: rgba(255, 255, 255, 1);
    height: 80px;
    width: 100%;
+   position: absolute;
+   z-index: 999;
  
+
+ 
+   
+   
    
  }
  .down{
