@@ -180,7 +180,7 @@ export default {
             className: "primary",
             disabled: false,
             method: (index, row) => {
-              this.handledel(index, row);
+              this.handledelpatity(index, row);
             },
           },
           {
@@ -222,7 +222,7 @@ export default {
       console.log(" index:", index);
       console.log(" row:", row);
     },
-    handledel(index, row) {
+    handledelpatity(index, row) {
       //操作栏编辑评价项
       console.log(" index:", index);
       this.$router.push({path:`/editparity/${row.id}`}) //获取路由参数用params
