@@ -20,9 +20,11 @@
       </el-menu>
     </div>
     <div class="right">
+      <el-badge :value="3" class="item">
       <div class="messge">
-        <div class="megnum">8</div>
+        <!-- <div class="megnum">8</div> -->
       </div>
+      </el-badge>
       <div class="mesglist">
         <el-dropdown>
   <span class="el-dropdown-link">
