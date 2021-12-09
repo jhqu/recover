@@ -1,10 +1,11 @@
 <template>
 
   <div class="content" >
+ 
     <div class="top" v-if="$route.path!='/login'">
       <Top :menulist="menulist"></Top>
+  
     </div>
-    
 <router-view></router-view>
   </div>
 
@@ -66,6 +67,9 @@ export default {
   flex-direction: column;
     width: 100%;
     margin: 0px;
+ 
+    
+    
     
  }
  .top{
@@ -73,9 +77,10 @@ export default {
     background-color: rgba(255, 255, 255, 1);
    height: 80px;
    width: 100%;
+      z-index: 999;
  
-   
- }
+
+  }
  .down{
     background-color: rgba(255, 255, 255, 1);
    margin-top: 15px;

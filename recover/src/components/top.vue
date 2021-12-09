@@ -97,6 +97,8 @@ export default {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  z-index: 0;
+
 }
 .left {
   display: flex;
