@@ -100,12 +100,6 @@ export default {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-<<<<<<< HEAD
-  z-index: 0;
-
-=======
- 
->>>>>>> 99da4d3a3c47c78fae9b1c7f8890ec2263807ab8
 }
 .left {
   display: flex;
