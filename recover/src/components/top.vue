@@ -20,9 +20,11 @@
       </el-menu>
     </div>
     <div class="right">
+      <el-badge :value="3" class="item">
       <div class="messge">
-        <div class="megnum">8</div>
+        <!-- <div class="megnum">8</div> -->
       </div>
+      </el-badge>
       <div class="mesglist">
         <el-dropdown>
   <span class="el-dropdown-link">
@@ -93,12 +95,17 @@ export default {
 </script>
 <style  scoped>
 .contenttop {
+  
   background-color: rgba(255, 255, 255, 1);
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+<<<<<<< HEAD
   z-index: 0;
 
+=======
+ 
+>>>>>>> 99da4d3a3c47c78fae9b1c7f8890ec2263807ab8
 }
 .left {
   display: flex;

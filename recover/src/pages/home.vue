@@ -1,5 +1,9 @@
 <template>
+<div class="hone_centre">
+ <div class="ada"></div>
+
   <div class="down">
+   
     <div>
       <h3>评审页面管理</h3>
     </div>
@@ -19,7 +23,9 @@
         :total="page.total"
        
       ></tablist>
+      
     </div>
+  </div>
   </div>
 </template>
 
@@ -235,23 +241,27 @@ export default {
 </script>
 
 <style  scoped>
-.content {
+.hone_centre{
+ 
+  width: 100%;
   display: flex;
   flex-direction: column;
-  width: 100%;
-  margin: 0px;
+   align-self: center;
+ 
 }
-.top {
-  background-color: rgba(255, 255, 255, 1);
-  height: 80px;
-  width: 100%;
-}
+ .ada{
+   height: 80px;
+  background-color: red;
+   margin: 0;padding: 0;
+ }
 .down {
+
   display: flex;
   flex-direction: column;
   background-color: rgba(255, 255, 255, 1);
   margin-top: 15px;
-  min-height: 750px;
+
+ min-height: 700px;
   width: 80%;
   align-self: center;
   border: 1px solid #eaeaea;

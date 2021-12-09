@@ -6,6 +6,11 @@
       <Top :menulist="menulist"></Top>
   
     </div>
+<<<<<<< HEAD
+=======
+    
+    
+>>>>>>> 99da4d3a3c47c78fae9b1c7f8890ec2263807ab8
 <router-view></router-view>
   </div>
 
@@ -61,26 +66,47 @@ export default {
 </script>
 
 <style  scoped>
- 
+ .ada{
+   height: 80px;
+   background-color: gold;
+ }
  .content{
    display: flex;
   flex-direction: column;
     width: 100%;
     margin: 0px;
+<<<<<<< HEAD
  
     
+=======
+    height: 920px;
+    overflow:auto;
+    overflow-y: auto;
+>>>>>>> 99da4d3a3c47c78fae9b1c7f8890ec2263807ab8
     
     
  }
  .top{
  
-    background-color: rgba(255, 255, 255, 1);
+  background-color: rgba(255, 255, 255, 1);
    height: 80px;
    width: 100%;
+<<<<<<< HEAD
       z-index: 999;
  
 
   }
+=======
+   position: absolute;
+   z-index: 999;
+ 
+
+ 
+   
+   
+   
+ }
+>>>>>>> 99da4d3a3c47c78fae9b1c7f8890ec2263807ab8
  .down{
     background-color: rgba(255, 255, 255, 1);
    margin-top: 15px;

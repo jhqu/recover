@@ -1,5 +1,6 @@
 <template>
-  <div class="content">
+  <div class="hone_centre">
+ <div class="ada"></div>
   
     <div class="down">我是about</div>
 
@@ -34,6 +35,19 @@ export default {
 </script>
 
 <style  scoped>
+.hone_centre{
+ 
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+   align-self: center;
+ 
+}
+ .ada{
+   height: 80px;
+  background-color: red;
+   margin: 0;padding: 0;
+ }
  .content{
    display: flex;
   flex-direction: column;
