@@ -4,7 +4,8 @@
   "description": "",
   "main": "main.js",
   "scripts": {
-    "serve": "webpack --mode=development --watch",
+    "dev": "webpack --mode=development --watch",
+    "serve": "cross-env NODE_ENV=development webpack  --watch",
     "built": "webpack --mode=production",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -14,6 +15,7 @@
     "@babel/core": "^7.16.0",
     "@babel/preset-env": "^7.16.4",
     "babel-loader": "^8.2.3",
+    "cross-env": "^7.0.3",
     "css-loader": "^6.5.1",
     "element-ui": "^2.15.6",
     "html-webpack-plugin": "^5.5.0",
@@ -26,6 +28,7 @@
     "webpack-cli": "^4.9.1"
   },
   "dependencies": {
+    "axios": "^0.24.0",
     "vue": "^2.6.14",
     "vue-router": "^3.5.3"
   }

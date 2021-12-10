@@ -70,8 +70,8 @@ export default {
   flex-direction: column;
     width: 100%;
     margin: 0px;
-    height: 920px;
-    overflow:auto;
+    min-height: 880px;
+    overflow:hidden;
     overflow-y: auto;
     
     
