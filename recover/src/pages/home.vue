@@ -261,7 +261,7 @@ export default {
   background-color: rgba(255, 255, 255, 1);
   margin-top: 15px;
 
- min-height: 700px;
+  height: 750px;
   width: 80%;
   align-self: center;
   border: 1px solid #eaeaea;

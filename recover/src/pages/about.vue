@@ -53,6 +53,8 @@ export default {
   flex-direction: column;
     width: 100%;
     margin: 0px;
+   
+  
     
  }
  .top{
@@ -63,6 +65,7 @@ export default {
    
  }
  .down{
+   z-index: 100;
     background-color: rgba(255, 255, 255, 1);
    margin-top: 15px;
    min-height: 750px;

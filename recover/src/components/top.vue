@@ -100,7 +100,6 @@ export default {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
- 
 }
 .left {
   display: flex;

@@ -1,11 +1,12 @@
 <template>
 
   <div class="content" >
+ 
     <div class="top" v-if="$route.path!='/login'">
       <Top :menulist="menulist"></Top>
+  
     </div>
-    
-    
+
 <router-view></router-view>
   </div>
 
@@ -61,43 +62,28 @@ export default {
 </script>
 
 <style  scoped>
- .ada{
-   height: 80px;
-   background-color: gold;
- }
+
  .content{
    display: flex;
   flex-direction: column;
     width: 100%;
     margin: 0px;
+
     min-height: 880px;
     overflow:hidden;
     overflow-y: auto;
-    
-    
  }
  .top{
  
   background-color: rgba(255, 255, 255, 1);
    height: 80px;
    width: 100%;
+  
    position: absolute;
    z-index: 999;
+  
  
+}
 
- 
-   
-   
-   
- }
- .down{
-    background-color: rgba(255, 255, 255, 1);
-   margin-top: 15px;
-   min-height: 750px;
- 
-   width: 80%;
-   align-self: center;
-   border: 1px solid #eaeaea;
-   box-shadow: 0 0 12px #cac6c6;
- }
-</style>>
+
+</style>
