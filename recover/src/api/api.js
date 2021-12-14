@@ -6,9 +6,12 @@ import http from '../utils/http'
  * @param request 请求地址 例如 http:192.168.1.2/request/
  * @param '/testIp' 代表vue-cli 中confi,index.js中配置的代理地址
  */
-let resquest ="/testIp/resquest"
+
+let resquest ="/src/data"
+
 //get 请求
 export function getListAPI(params){
+
     return http.get(`${resquest}/getList.json`,params)
 }
 //post 请求

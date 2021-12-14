@@ -6,7 +6,9 @@ const http ={
      * @param url 请求地址
      * @param params 请求参数 
      */
+   
     get(url,params){
+      
         const config ={
             method:'get',
             url:url

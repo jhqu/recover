@@ -31,7 +31,7 @@
 
 <script> 
 import Tablist from "../components/tablist.vue";
-
+import {getListAPI} from '../api/api.js'
 export default {
   name: "home",
   components: {
@@ -197,7 +197,14 @@ export default {
       }, // 列操作按钮
     }; //return ending
   },
+  created(){
+    this.getlist()
+  },
   methods: {
+
+    getlist(){
+    getListAPI()
+    },
     handleSelectionChange(val) {
       //checkbox选中的数据val 是选中行的所有数组
       alert(val)

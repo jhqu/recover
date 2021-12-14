@@ -54,5 +54,31 @@ module.exports ={
     //  new webpack.DefinePlugin({
     //     "process.env.NODE_ENV" : (JSON.stringify(process.env.NODE_ENV+'_aaaaa'))
     //  })
-    ]
+    ],
+    // devtool:'inline-source-map',
+    devServer:{
+        static: {
+            directory: resolve(__dirname, 'dist'),
+          },
+          compress: true,
+          port: 9000,
+          host:'localhost',
+          open:true,
+          hot:true,
+          proxy: {
+            '/api': {
+              target: 'http://127.0.0.1:5500', //本地起的接口地址
+              changeOrigin:true,
+              pathRewrite: { '^/api': '' },
+            },
+            '/elseIp': {
+                target: 'http://127.0.0.1:5500',
+                pathRewrite: { 
+                  '^/esleIp': ''
+                }
+              },
+          },
+
+    },
+    mode:'development'
 }

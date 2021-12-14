@@ -2,12 +2,15 @@
 import axios from "axios"
 import {Message} from 'element-ui' 
 
+//console.log(process)
 //创建axios 实例
  const service = axios.create({
-    //公告接口
-    baseURL:process.env.BASE_API,
+    //公共接口地址
+    baseURL:'/api',
     //超时时间 单位ms,这里设置了3s的超时时间
+    timeout:3*3000
 })
+console.log(service.baseURL);
 //2.请求拦截器
 service.interceptors.request.use((config)=>{
 //发送之前要做的处理，数据转化，配置请求，设置token,设置loding等
@@ -44,7 +47,7 @@ service.interceptors.response.use(response => {
           break;
         case 404:
           error.message = '请求错误,未找到该资源'
-          window.location.href = "/NotFound"
+          //window.location.href = "/NotFound"
           break;
         case 405:
           error.message = '请求方法未允许'
