@@ -1,12 +1,17 @@
 /*** request.js ***/
 import axios from "axios"
 import {Message} from 'element-ui' 
-
-//console.log(process)
+let api
+if(process.env.NODE_ENV =='devlopment'){
+  api='/api'
+}else{
+  api='http://127.0.0.1:5500'
+}
+console.log(process.env.NODE_ENV)
 //创建axios 实例
  const service = axios.create({
     //公共接口地址
-    baseURL:'/api',
+    baseURL:api,
     //超时时间 单位ms,这里设置了3s的超时时间
     timeout:3*3000
 })
