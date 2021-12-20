@@ -7,7 +7,7 @@ import http from '../utils/http'
  * @param '/testIp' 代表vue-cli 中confi,index.js中配置的代理地址
  */
 
-let resquest ="/src/data"
+let resquest ="/recover/src/data"
 
 //get 请求
 export function getListAPI(params){

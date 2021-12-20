@@ -1,6 +1,6 @@
 <template>
 
-  <div class="content" >
+  <div class="content"  >
  
     <div class="top" v-if="$route.path!='/login'">
       <Top :menulist="menulist"></Top>
@@ -64,6 +64,7 @@ export default {
 <style  scoped>
 
  .content{
+
    display: flex;
   flex-direction: column;
     width: 100%;

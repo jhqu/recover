@@ -1,4 +1,5 @@
 <template>
+<div class="loginbody">
   <el-form :model="ruleForm" status-icon :rules="rules" ref="ruleForm" label-width="60px" class="demo-ruleForm login-container">
       <h3 class="title">系统登录</h3>
   <el-form-item label="账号" prop="user">
@@ -14,7 +15,7 @@
   </el-form-item>
 </el-form>
       
-  
+  </div>
 </template>
 
 <script>
@@ -103,6 +104,11 @@ export default {
 </script>
 
 <style scoped>
+.loginbody{
+  height: 100vh;
+  width: 100%;
+   background-color: rgba(255, 255, 255, 1);
+}
 .login-container{
  -webkit-border-radius: 5px;
  border-radius: 5px;
